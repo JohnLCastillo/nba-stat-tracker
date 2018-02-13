@@ -6,8 +6,8 @@ let secondTimer;
 
 export class Activity extends React.Component {
     startTimer() {
-        timer = setTimeout(()=>this.props.dispatch(clearAuth()), 10000);
-        secondTimer = setTimeout(()=>this.props.dispatch(dialogOn()), 5000);
+        timer = setTimeout(()=>this.props.dispatch(clearAuth()), 60000);
+        secondTimer = setTimeout(()=>this.props.dispatch(dialogOn()), 50000);
     }
 
     restartTimer() {
@@ -39,12 +39,12 @@ export class Activity extends React.Component {
                         You will be logged out in a minute unless you click anywhere on the page
                         </div>
                     </div>
-                )
+                );
             }
         }
         return (
             <p></p>
-        )
+        );
     }
 }
 
