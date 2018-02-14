@@ -13,7 +13,7 @@ export function LandingPage(props) {
         <div className="home">
             <h2>Log in or register to start keeping track on your favorite players!</h2>
             <LoginForm />
-            <Link to="/register">Register</Link>
+            <Link to="/register">Sign Up!</Link>
         </div>
     );
 }

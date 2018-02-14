@@ -14,17 +14,17 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
-        let pts = [];
-        let players = [];
-        for(let i=0;i< action.data.stats.leagueDashPlayerStats.length;i++){
-            //  pts = [...pts,action.data.stats.leagueDashPlayerStats[i].pts];
-            //  players = [...players,action.data.stats.leagueDashPlayerStats[i].playerName];
-            let mappedPTS = action.data.stats.leagueDashPlayerStats[i].pts.filter(pts => { 
-                pts > 17;
-                console.log(pts)
-            })
-            console.log(mappedPTS);
-            }
+        // let pts = [];
+        // let players = [];
+        // for(let i=0;i< action.data.stats.leagueDashPlayerStats.length;i++){
+        //     //  pts = [...pts,action.data.stats.leagueDashPlayerStats[i].pts];
+        //     //  players = [...players,action.data.stats.leagueDashPlayerStats[i].playerName];
+        //     let mappedPTS = action.data.stats.leagueDashPlayerStats[i].pts.filter(pts => { 
+        //         pts > 17;
+        //         console.log(pts)
+        //     })
+        //     console.log(mappedPTS);
+        //     }
             // pts.sort(function(a, b){return b-a});
             // console.log(pts);
         return Object.assign({}, state, {
