@@ -11,13 +11,14 @@ export class Dashboard extends React.Component {
     }
 
     render() {
+        
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                <Link to="/register">Add to your Favorites</Link>
+                <Link to="/addplayer" onClick={() => <Redirect to="/addplayer"/>}>Add to your Favorites</Link>
                 <Players />
             </div>
         );

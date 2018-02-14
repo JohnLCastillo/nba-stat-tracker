@@ -6,7 +6,7 @@ body {
   background-size: cover;
 }
 
-.home, .header-bar {
+.home, .header-bar, .dialog {
   text-align: center;
   color: white;
   font-size: 1vw;
