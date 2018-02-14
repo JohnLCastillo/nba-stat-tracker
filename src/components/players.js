@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import requiresLogin from "./requires-login";
-
+//fix no playerid in favs
 export class Players extends React.Component {
   render() {
     // const currentFavorites = this.props.favs.map(player => (
