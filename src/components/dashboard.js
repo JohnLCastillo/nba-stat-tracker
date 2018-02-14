@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import Players from './players';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -17,10 +17,9 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
-                <Link to="/addplayer" onClick={() => <Redirect to="/addplayer"/>}>Add to your Favorites</Link>
-                <Players />
+                <Link to="/addplayer">Add to your Favorites</Link>
                 <br/>
-                <img src='https://lh4.googleusercontent.com/-KjQiJwB8Sfk/TtTv9lVVQCI/AAAAAAAAAjI/yRUefs-EKHE/w506-h750/ChrisPaul350.png' alt='' height="182" width="232"/>
+                <Players />
                 
             </div>
         );
