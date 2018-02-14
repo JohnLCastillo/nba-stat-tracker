@@ -1,12 +1,12 @@
 import {API_BASE_URL} from '../config';
 
-export const Favorites = user => dispatch => {
-    return fetch(`${API_BASE_URL}/users`, {
+export const addFavorite = (player,userId) => dispatch => {
+    return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(player)
     })
         .then(res => res.json())
         .catch(err => console.log(err));
