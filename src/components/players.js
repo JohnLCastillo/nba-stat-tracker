@@ -4,29 +4,27 @@ import requiresLogin from "./requires-login";
 
 export class Players extends React.Component {
   render() {
-    if (this.props.protectedData[0]) {
-      console.log(this.props.protectedStats[0].playerHeadlineStats[0]);
+    // const currentFavorites = this.props.favs.map(player => (
+    //   <div className='box' key={player.playerId}>{player.playerName} PPG:{player.pts}  AST:{player.ast}  REB:{player.reb}</div>
+      console.log(this.props.favs);
       return (
         <div className="player">
           <div className="playername">
-            Player: {this.props.protectedData[0].fullName}
+            Player: {this.props.favs.fullName}
           </div>
           <div className="playerstats">
-            PPG: {this.props.protectedStats[0].playerHeadlineStats[0].pts}
+            {/* PPG: {this.props.protectedStats[0].playerHeadlineStats[0].pts}
             AST:  {this.props.protectedStats[0].playerHeadlineStats[0].ast}
-            REB: {this.props.protectedStats[0].playerHeadlineStats[0].reb}
+            REB: {this.props.protectedStats[0].playerHeadlineStats[0].reb} */}
           </div>
         </div>
-      );
-    }
-    return null;
+      ); 
   }
 }
 
 const mapStateToProps = state => {
   return {
-    protectedData: state.protectedData.data,
-    protectedStats: state.protectedData.stats
+    favs: state.auth.currentUser.favorites
   };
 };
 

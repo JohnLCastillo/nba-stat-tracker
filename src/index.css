@@ -42,3 +42,7 @@ a, a:visited {
   font-size: 100%;
   text-align: center;
 }
+
+.box:hover {
+  background-color: darkgrey;
+}

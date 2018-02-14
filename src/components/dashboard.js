@@ -18,7 +18,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <Link to="/addplayer" onClick={() => <Redirect to="/addplayer"/>}>Add to your Favorites</Link>
-                {/* <Players /> */}
+                <Players />
                 <br/>
                 <img src='https://lh4.googleusercontent.com/-KjQiJwB8Sfk/TtTv9lVVQCI/AAAAAAAAAjI/yRUefs-EKHE/w506-h750/ChrisPaul350.png' alt='' height="182" width="232"/>
                 
@@ -29,10 +29,9 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
+    console.log(currentUser)
     return {
-        username: state.auth.currentUser.username,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        username: state.auth.currentUser.username
     };
 };
 

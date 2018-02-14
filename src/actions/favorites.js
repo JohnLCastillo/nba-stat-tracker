@@ -9,5 +9,5 @@ export const addFavorite = (player,userId) => dispatch => {
         body: JSON.stringify(player)
     })
         .then(res => res.json())
-        .catch(err => console.log(err));
+        .catch(err => alert(err));
 };
