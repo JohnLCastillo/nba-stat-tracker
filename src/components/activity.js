@@ -17,10 +17,8 @@ export class Activity extends React.Component {
     }
 
     componentDidMount() {
-        console.log('component mounted');
         this.startTimer();
         window.addEventListener('click', () => {
-            console.log('window clicked');
             this.props.dispatch(dialogOff());
             this.restartTimer();
         })

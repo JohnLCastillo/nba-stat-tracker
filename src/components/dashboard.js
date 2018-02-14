@@ -17,9 +17,11 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
                 <Link to="/addplayer" onClick={() => <Redirect to="/addplayer"/>}>Add to your Favorites</Link>
-                <Players />
+                {/* <Players /> */}
+                <br/>
+                <img src='https://lh4.googleusercontent.com/-KjQiJwB8Sfk/TtTv9lVVQCI/AAAAAAAAAjI/yRUefs-EKHE/w506-h750/ChrisPaul350.png' alt='' height="182" width="232"/>
+                
             </div>
         );
     }

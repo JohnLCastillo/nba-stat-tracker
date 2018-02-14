@@ -4,29 +4,22 @@ import requiresLogin from "./requires-login";
 
 export class addPlayers extends React.Component {
   render() {
-    if (this.props.protectedData[0]) {
-      console.log(this.props.protectedStats[0].playerHeadlineStats[0]);
+      console.log(this.props.protectedStats)
+      const players = this.props.protectedStats.map(player => <li>{player.fullName}</li>);
+    // if (this.props.protectedData[0]) {
+    //   console.log(this.props.protectedStats[0].playerHeadlineStats[0]);
       return (
-        <div className="player">
-          <div className="playername">
-            Player: {this.props.protectedData[0].fullName}
-          </div>
-          <div className="playerstats">
-            PPG: {this.props.protectedStats[0].playerHeadlineStats[0].pts}
-            AST:  {this.props.protectedStats[0].playerHeadlineStats[0].ast}
-            REB: {this.props.protectedStats[0].playerHeadlineStats[0].reb}
-          </div>
+        <div className="playera">
+        {players}
         </div>
-      );
-    }
-    return null;
-  }
+      )}
 }
 
 const mapStateToProps = state => {
   return {
+    // players: state.protectedData.leagueDashPlayerStats.filter(player => player.pts <17).sort((a,b) => b-a).slice(0,20),
     protectedData: state.protectedData.data,
-    protectedStats: state.protectedData.stats
+    protectedStats: state.protectedData.stats.filter(player => player.pts >= 17).sort((a,b) => b.pts-a.pts).slice(0,20)
   };
 };
 

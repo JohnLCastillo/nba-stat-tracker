@@ -6,8 +6,6 @@ import {
 const initialState = {
     data: [],
     stats: [],
-    PPG: [],
-    PTS: [],
     player: [],
     error: null
 };
@@ -29,7 +27,7 @@ export default function reducer(state = initialState, action) {
             // console.log(pts);
         return Object.assign({}, state, {
             data: [...state.data,action.data.player],
-            stats: [...state.stats,action.data.stats],
+            stats: action.data.stats,
             error: null
         });
     } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
