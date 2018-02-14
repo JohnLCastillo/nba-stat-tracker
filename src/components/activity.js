@@ -6,8 +6,8 @@ let secondTimer;
 
 export class Activity extends React.Component {
     startTimer() {
-        timer = setTimeout(()=>this.props.dispatch(clearAuth()), 60000);
-        secondTimer = setTimeout(()=>this.props.dispatch(dialogOn()), 50000);
+        timer = setTimeout(()=>this.props.dispatch(clearAuth()), 1100000);
+        secondTimer = setTimeout(()=>this.props.dispatch(dialogOn()), 1000000);
     }
 
     restartTimer() {

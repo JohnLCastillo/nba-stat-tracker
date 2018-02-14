@@ -13,7 +13,7 @@ body {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.dashboard, .playera {
+.dashboard {
   text-align: center;
   color: white;
   font-size: 1vw;
@@ -22,4 +22,23 @@ body {
 
 a, a:visited {
   color: cyan;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-gap: 10px;
+  color: #444;
+  max-width: 50%;
+  max-height: 50%;
+  margin: auto;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 100%;
+  text-align: center;
 }
