@@ -5,13 +5,13 @@ import requiresLogin from "./requires-login";
 export class addPlayers extends React.Component {
   render() {
       console.log(this.props.protectedStats)
-      const players = this.props.protectedStats.map(player => <li>{player.fullName}</li>);
+      const players = this.props.protectedStats.map(player => <li key={player.playerId}>{player.playerName}</li>);
     // if (this.props.protectedData[0]) {
     //   console.log(this.props.protectedStats[0].playerHeadlineStats[0]);
       return (
-        <div className="playera">
+        <ul className="playera">
         {players}
-        </div>
+        </ul>
       )}
 }
 
