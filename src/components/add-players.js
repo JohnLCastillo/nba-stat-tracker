@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import {addFavorite} from '../actions/favorites'
+import {addFavorite} from '../actions/favorites';
 // import {Redirect} from 'react-router-dom';
 
 export class addPlayers extends React.Component {
