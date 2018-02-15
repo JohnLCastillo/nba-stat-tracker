@@ -1,6 +1,6 @@
 import {API_BASE_URL} from '../config';
 
-export const deleteFavorite = (playerId,userId) => dispatch => {
+export const deleteFavorite = (userId,playerId) => dispatch => {
     return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {
         method: 'delete'
     })

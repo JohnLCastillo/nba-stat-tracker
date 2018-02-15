@@ -7,13 +7,19 @@ export const fetchFavoritesSuccess = data => ({
     data
 });
 
+export const ADD_FAVORITES_SUCCESS = 'ADD_FAVORITES_SUCCESS';
+export const addFavoritesSuccess = data => ({
+    type: ADD_FAVORITES_SUCCESS,
+    data
+});
+
 export const FETCH_FAVORITES_ERROR = 'FETCH_FAVORITES_ERROR';
 export const fetchFavoritesError = error => ({
     type: FETCH_FAVORITES_ERROR,
     error
 });
 
-export const addFavorite = (playerId,userId) => {
+export const addFavorite = (playerId,userId) => dispatch => {
     console.log(playerId)
     return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {
         method: 'POST',
@@ -23,16 +29,15 @@ export const addFavorite = (playerId,userId) => {
         body: JSON.stringify({playerId})
     })
         .then(res => res.json())
-        .catch(err => alert(err));
+        .catch(err => dispatch(fetchFavoritesError(err)));
 };
 
 export const fetchFavorites = userId => dispatch => {
-    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {
         method: 'GET',
-        headers: {
-            Authorization: `Bearer ${authToken}`
-        }
+        // headers: {
+        //     Authorization: `Bearer ${authToken}`
+        // }
     })
         .then(data => dispatch(fetchFavoritesSuccess(data)))
         .catch(err => dispatch(fetchFavoritesError(err)));

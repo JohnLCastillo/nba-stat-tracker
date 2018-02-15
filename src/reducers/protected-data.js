@@ -24,7 +24,6 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     }else if (action.type === FETCH_FAVORITES_SUCCESS) {
-        console.log('this ran bro')
         return Object.assign({}, state, {
             favoritePlayers: action.data,
             error: null
