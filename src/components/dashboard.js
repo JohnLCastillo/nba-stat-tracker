@@ -14,13 +14,9 @@ export class Dashboard extends React.Component {
         
         return (
             <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
                 <Link to="/addplayer">Add to your Favorites</Link>
                 <br/>
                 <Players />
-                
             </div>
         );
     }

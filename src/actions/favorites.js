@@ -20,7 +20,6 @@ export const fetchFavoritesError = error => ({
 });
 
 export const addFavorite = (playerId,userId) => dispatch => {
-    console.log(playerId)
     return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {
         method: 'POST',
         headers: {
@@ -28,17 +27,15 @@ export const addFavorite = (playerId,userId) => dispatch => {
         },
         body: JSON.stringify({playerId})
     })
-        .then(res => res.json())
+        .then(data => dispatch(addFavoritesSuccess(data)))
         .catch(err => dispatch(fetchFavoritesError(err)));
 };
 
 export const fetchFavorites = userId => dispatch => {
     return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {
         method: 'GET',
-        // headers: {
-        //     Authorization: `Bearer ${authToken}`
-        // }
     })
+        .then(res => res.json())
         .then(data => dispatch(fetchFavoritesSuccess(data)))
         .catch(err => dispatch(fetchFavoritesError(err)));
 };

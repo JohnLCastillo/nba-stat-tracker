@@ -20,6 +20,11 @@ body {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.dashboard-button {
+  position: relative;  
+  left: 40%;
+}
+
 a, a:visited {
   color: cyan;
 }

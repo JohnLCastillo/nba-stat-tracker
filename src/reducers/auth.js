@@ -48,7 +48,7 @@ export default function reducer(state = initialState, action) {
     }else if(action.type === DIALOG_OFF) {
         return Object.assign({}, state, {
             dialog: false
-        })
+        });
     }
     return state;
 }
