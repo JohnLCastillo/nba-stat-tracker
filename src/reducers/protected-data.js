@@ -43,11 +43,13 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     }else if (action.type === FILTER) {
-        console.log(action.data)
-        let filteredNames = state.allStats.filter(player => player.playerName.includes(action.data));
-        return Object.assign({}, state, {
-            filteredNames : filteredNames
-        });
+        if(action.data !== ''){
+            let filteredNames = state.allStats.filter(player => player.playerName.toLowerCase().includes(action.data.toLowerCase()));
+            return Object.assign({}, state, {
+                filteredNames : filteredNames
+            });
+        }
+        return state;
     }
     return state;
 }
