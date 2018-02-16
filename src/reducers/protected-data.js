@@ -5,13 +5,16 @@ import {
 import {
     FETCH_FAVORITES_SUCCESS,
     ADD_FAVORITES_SUCCESS,
-    FETCH_FAVORITES_ERROR
+    FETCH_FAVORITES_ERROR,
+    FILTER
 } from '../actions/favorites';
+
 
 const initialState = {
     allStats: [],
     favoritePlayerId: [],
     favoritePlayers: [],
+    filteredNames: [],
     error: null
 };
 
@@ -38,6 +41,12 @@ export default function reducer(state = initialState, action) {
     }else if (action.type === FETCH_FAVORITES_ERROR) {
         return Object.assign({}, state, {
             error: action.error
+        });
+    }else if (action.type === FILTER) {
+        console.log(action.data)
+        let filteredNames = state.allStats.filter(player => player.playerName.includes(action.data));
+        return Object.assign({}, state, {
+            filteredNames : filteredNames
         });
     }
     return state;

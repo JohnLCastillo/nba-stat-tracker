@@ -13,11 +13,18 @@ export const addFavoritesSuccess = data => ({
     data
 });
 
+export const FILTER = 'FILTER';
+export const filterInput = data => ({
+    type: FILTER,
+    data
+});
+
 export const FETCH_FAVORITES_ERROR = 'FETCH_FAVORITES_ERROR';
 export const fetchFavoritesError = error => ({
     type: FETCH_FAVORITES_ERROR,
     error
 });
+
 
 export const addFavorite = (playerId,userId) => dispatch => {
     return fetch(`${API_BASE_URL}/users/${userId}/favorites`, {

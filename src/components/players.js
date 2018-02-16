@@ -6,7 +6,6 @@ import { deleteFavorite } from "../actions/delete";
 
 export class Players extends React.Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.dispatch(fetchFavorites(this.props.currentUserId));
   }
   render() {
